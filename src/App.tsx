@@ -9,9 +9,9 @@ function App() {
   const [activeTab, setActiveTab] = useState<'about' | 'projects' | 'blog' | 'media'>('about');
 
   return (
-    <div className="h-screen flex flex-col text-white overflow-hidden">
+    <div className="h-screen flex flex-col text-white overflow-hidden relative">
       {/* Fixed navigation header */}
-      <header className="flex-shrink-0 p-6 md:px-16 lg:px-20 xl:px-24 max-w-7xl mx-auto w-full">
+      <header className="flex-shrink-0 p-6 md:px-16 lg:px-20 xl:px-24 max-w-7xl mx-auto w-full pr-16 md:pr-24 lg:pr-28">
         <div className="mb-6">
           <div className="flex items-center justify-center gap-10 text-base uppercase tracking-[0.1em] font-inter">
             <button
@@ -44,7 +44,7 @@ function App() {
       </header>
 
       {/* Scrollable content area */}
-      <main className="flex-1 overflow-y-auto px-6 md:px-16 lg:px-20 xl:px-24 max-w-7xl mx-auto w-full pb-12">
+      <main className="flex-1 overflow-y-auto px-6 md:px-16 lg:px-20 xl:px-24 max-w-7xl mx-auto w-full pb-12 pr-16 md:pr-24 lg:pr-28">
         {activeTab === 'about' && <About />}
         {activeTab === 'projects' && <Projects />}
         {activeTab === 'blog' && <Blog />}
