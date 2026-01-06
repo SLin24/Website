@@ -2,16 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+/* Put the gradient on the html element too so overscroll/bounce shows the
+   same background (some browsers reveal the html background during overscroll) */
+html {
+  height: 100%;
+  background-color: #000; /* fallback */
+  background: linear-gradient(
+    to bottom,
+    #010f1b 0%,
+    #010f1b 100%
+  );
+  background-attachment: fixed; /* keeps gradient fixed during scroll/bounce */
+}
+
+/* Add a fixed pseudo-element to guarantee the gradient covers the viewport
+   during overscroll/rubber-band effects (some browsers reveal a white area
+   otherwise). The pseudo-element is placed behind content. */
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to bottom, #010f1b 0%, #010f1b 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  pointer-events: none;
+}
+
+/* Beveled card style */
+.bevel-card {
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+
+.bevel-card .label {
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Hide scrollbar for cleaner carousel (webkit) */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+
+/* Apply base styles to body and the React root so the gradient fills the page */
+body, #root {
+  font-family: 'Orbitron', sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  min-height: 100vh; /* cover full viewport */
+  color: #fff; /* keep text readable */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
