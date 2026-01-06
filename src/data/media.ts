@@ -1,3 +1,5 @@
+import PoolImage from '../assets/Gallery/pool.png';
+
 export interface MediaItem {
   id: number;
   imageUrl: string;
@@ -9,7 +11,7 @@ export interface MediaItem {
 export const mediaItems: MediaItem[] = [
   {
     id: 1,
-    imageUrl: '/Gallery/pool.png',
+    imageUrl: PoolImage,
     label: '2025 Asia Chengdu Regional',
   },
   {

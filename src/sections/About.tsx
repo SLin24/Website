@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Profile from '../assets/profile.png'
 export default function About() {
   return (
     <div className="flex gap-12 h-full">
@@ -8,7 +8,7 @@ export default function About() {
         {/* Profile picture circle */}
         <div className="rounded-full bg-white mb-8 overflow-hidden border-2 border-white/20 flex items-center justify-center" style={{ width: '400px', height: '400px' }}>
           <img
-            src="/profile.png"
+            src={Profile}
             alt="Profile"
             className="object-contain"
             style={{ width: '75%', height: '75%' }}

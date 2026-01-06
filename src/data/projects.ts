@@ -1,3 +1,6 @@
+import CroppedSS from '../assets/ProjectMedia/croppedSS.mp4';
+import AHKImage from '../assets/ProjectMedia/AHKImage.png'
+
 export type MediaType = 'image' | 'gif' | 'video' | 'embed' | undefined;
 
 export interface Project {
@@ -15,7 +18,7 @@ export const projects: Project[] = [
   {
     id: 1,
     title: 'donut.c adaptation',
-    mediaUrl: '/ProjectMedia/croppedSS.mp4',
+    mediaUrl: CroppedSS,
     mediaType: 'video',
     linkUrl: null,
     linkLabel: null,
@@ -25,7 +28,7 @@ export const projects: Project[] = [
   {
     id: 2,
     title: 'AutoHotKey UI Assistant (Neutron)',
-    mediaUrl: '/ProjectMedia/AHKImage.png',
+    mediaUrl: AHKImage,
     mediaType: 'image',
     linkUrl: 'https://github.com/SLin24/Reminders',
     linkLabel: 'See More',
